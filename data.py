@@ -10,6 +10,7 @@ class ListNode(object):
             this = this.next
         print
 
+
 class TreeNode(object):
     def __init__(self, x):
         self.val = x
