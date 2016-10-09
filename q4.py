@@ -21,9 +21,9 @@ class Solution(object):
         pa = min(len(a), k/2)
         pb = k - pa
         if a[pa-1] < b[pb-1]:
-            return self.find(a[pa::1], b, k-pa)
+            return self.find(a[pa::], b, k-pa)
         elif a[pa-1] > b[pb-1]:
-            return self.find(a, b[pb::1], k-pb)
+            return self.find(a, b[pb::], k-pb)
         else:
             return a[pa-1]
 

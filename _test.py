@@ -1,2 +1,5 @@
-n = [[], [2]]
-print n + map(lambda x: x+[0], n)
+import sys
+
+a = [3,2,1]
+
+print a[10::]
