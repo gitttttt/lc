@@ -19,6 +19,28 @@ class Solution(object):
         print m
         return res
 
+    def longestPalindrome(self, s):
+        res = [[False for _ in s] for _ in s]
+        for i in range(len(s)-1):
+            res[i][i] = True
+            if s[i] == s[i+1]:
+                res[i][i+1] = True
+        res[len(s)-1][len(s)-1] = True
+        for i in range(len(s)-3, -1, -1):
+            for j in range(i+2, len(s), 1):
+                if res[i+1][j-1] and s[i] == s[j]:
+                    res[i][j] = True
+        length = 0
+        print res
+        result = ""
+        for i in range(0, len(s), 1):
+            for j in range(0, len(s), 1)[::-1]:
+                if res[i][j] and j-i+1 > length:
+                    length = j-i+1
+                    result = s[i:j+1:]
+        return result
+
+
 
     # def longestPalindrome(self, s):
     #     """
@@ -43,4 +65,4 @@ class Solution(object):
     #             j += 1
     #     return res
 
-print Solution().longestPalindrome('abbabbcccbb')
+print Solution().longestPalindrome('bb')
