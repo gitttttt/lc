@@ -18,13 +18,12 @@ class Solution(object):
             '8': 'tuv',
             '9': 'wxyz'
         }
-        res = list(kvmaps[digits[0]])
-        for i in list(digits[1::]):
+        res = kvmaps[digits[0]]
+        for i in digits[1::]:
             tmp = []
-            for j in list(kvmaps[i]):
+            for j in kvmaps[i]:
                 for k in res:
                     tmp.append(k + j)
-                    print 'i', 'j', 'k', tmp
             res = tmp
         print len(res)
 

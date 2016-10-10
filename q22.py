@@ -11,4 +11,4 @@ def generateParenthesis(n):
         res.append(tmp)
     return res[-1]
 
-generateParenthesis(3)
+print generateParenthesis(3)
