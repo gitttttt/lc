@@ -8,4 +8,6 @@ def maxProfit(prices):
         i += 1
     return max_price
 
+#http://liangjiabin.com/blog/2015/04/leetcode-best-time-to-buy-and-sell-stock.html
+
 print(maxProfit([5,4,3]))
