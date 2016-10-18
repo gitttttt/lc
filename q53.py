@@ -1,6 +1,7 @@
 class Solution(object):
     def maxSubArray(self, nums):
         """
+        http://blog.csdn.net/linhuanmars/article/details/21314059
         :type nums: List[int]
         :rtype: int
         """
