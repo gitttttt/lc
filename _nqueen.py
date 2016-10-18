@@ -1,6 +1,7 @@
 class Solution(object):
     def solveNQueens(self, n):
         """
+        http://blog.csdn.net/hackbuteer1/article/details/6657109
         :type n: int
         :rtype: List[List[str]]
         """
@@ -45,5 +46,3 @@ class Solution(object):
         return True
 
 print Solution().solveNQueens(8)
-
-print
