@@ -1,3 +1,3 @@
-w = 'aa'
+w = 'aaaa'
 
-print not w[2:]
+print w[-2:]

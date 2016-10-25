@@ -3,6 +3,7 @@ def diffWaysToCompute(input):
     return mid(input, tmp)
 
 def mid(input, tmp):
+    print input, tmp
     res = []
     for i, v in enumerate(input):
         if v == "+" or v == "-" or v == "*":
