@@ -60,4 +60,4 @@ def bfs_list():
                 visited[i] = 1
                 queue.insert(0, i)
 
-bfs_matrix()
+dfs_matrix()
