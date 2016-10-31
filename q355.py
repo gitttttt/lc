@@ -60,7 +60,6 @@ class Twitter(object):
         :type followeeId: int
         :rtype: void
         """
-
         self.user[followerId].remove(followeeId)
 
 userId = 1
