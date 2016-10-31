@@ -1,12 +1,18 @@
 import time
 
+class T:
+    def __init__(self, u, t):
+        self.u = u
+        self.t = t
+        self.n = time.time()
+
 class Twitter(object):
 
     def __init__(self):
         """
         Initialize your data structure here.
         """
-        self.feed = {}
+        self.feed = []
         self.user = {}
 
 
@@ -17,9 +23,7 @@ class Twitter(object):
         :type tweetId: int
         :rtype: void
         """
-        if userId not in self.feed:
-            self.feed[userId] = set()
-        self.feed[userId].add((time.time(), tweetId))
+        self.feed.append(T(userId, tweetId))
 
 
     def getNewsFeed(self, userId):
@@ -28,8 +32,10 @@ class Twitter(object):
         :type userId: int
         :rtype: List[int]
         """
-        users = [userId] + self.user[userId]
-        feeds = [self.feed[u] for u in users]
+        u = [userId]
+        if userId in self.user:
+            u = u + self.user[userId]
+        return filter(lambda x: x.u in u, self.feed)[:10]
 
 
 
@@ -57,10 +63,12 @@ class Twitter(object):
 
         self.user[followerId].remove(followeeId)
 
-
-        # Your Twitter object will be instantiated and called as such:
-        # obj = Twitter()
-        # obj.postTweet(userId,tweetId)
-        # param_2 = obj.getNewsFeed(userId)
-        # obj.follow(followerId,followeeId)
-        # obj.unfollow(followerId,followeeId)
+userId = 1
+tweetId = 1
+followerId = 1
+followeeId = 2
+obj = Twitter()
+obj.postTweet(userId,tweetId)
+param_2 = obj.getNewsFeed(userId)
+obj.follow(followerId,followeeId)
+obj.unfollow(followerId,followeeId)
