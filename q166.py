@@ -7,25 +7,21 @@ class Solution(object):
         :type denominator: int
         :rtype: str
         """
-        if not numerator % denominator:
-            return str(numerator / denominator)
-        sys = '-' if numerator > 0 ^ numerator > 0 else ''
-        numerator, denominator = abs(numerator), abs(denominator)
-        z, y, yr = {}, {}, {}
-        zs = numerator/denominator
-        ys = numerator%denominator
-        index = 0
-        while ys:
-            z[index], y[index] = ys/denominator, ys%denominator
-            y[ys%denominator] = index
-            if ys in yr:
-                start = yr[ys]
-                for i in range(start, index):
-                    print i
-            ys *= 10
-            index += 1
-            time.sleep(1)
-            print z, y
+        n, d = numerator, denominator
+        l = n/d
+        n -= l*d
+        tmp = {n: 0}
+        c = 0
+        while n not in tmp:
+            while n < d and n:
+                c += 1
+                n *= 10
+            n -= n/d * d
+            if n == 0:
+                pass
+            tmp[n] = c
+
+
 
 
 print Solution().fractionToDecimal(-1, -33)
