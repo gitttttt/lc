@@ -4,20 +4,26 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        tmp = [0 for _ in range(8)]
-        tmp = [1, 10, 100, 1000, 10000, 100000]
-        tmp[0] = 9
-        for i in range(1, 8):
-            tmp[i] = tmp[i-1] * 10
-        for i in range(1, 8):
-            tmp[i] = tmp[i-1] + tmp[i] * (i+1)
-        while n > 0:
-            index = 7
-            while n < tmp[index]:
-                index -= 1
-            n -= tmp[index]
-        print tmp
+        if n < 10:
+            return n
+        arr = map(lambda x: (x+1) * 9 * 10**x, [i for i in range(9)])
+        for i in range(1, len(arr)):
+            arr[i] += arr[i-1]
+        index = 0
+        for i in range(len(arr)):
+            if arr[i] > n:
+                index = i-1
+                break
+        rest = n - arr[index]
+        a, b = rest/(index+2), rest%(index+2)
+        print arr, 'i', index, 'r', rest, 'a', a, 'b', b, 'n'
+        if not b:
+            return str(10 ** (index+1) + a-1)[-1]
+        now = 10 ** (index+1) + a
+
+        return str(now)[b-1]
 
 
-Solution().findNthDigit(10)
-print 2**31
+
+
+print Solution().findNthDigit(11)
