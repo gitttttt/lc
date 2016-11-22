@@ -4,22 +4,21 @@ class Solution(object):
         :type points: List[List[int]]
         :rtype: int
         """
-        res = 0
-        while len(points) > 1:
-            nums = reduce(lambda x, y: x+y, points)
-            p = None
-            nb = 0
-            for n in nums:
-                tmp = filter(lambda p: self.in_arr(n, p), points)
-                if len(tmp) > nb:
-                    nb = len(tmp)
-                    p = tmp
-            res += 1
-        return res + 1
+        res = 1
+        points.sort()
+        end = points[0][1]
+        for i in range(1, len(points)):
+            if points[i][0] <= end:
+                end = min(end, points[i][1])
+            else:
+                res += 1
+                end = points[i][1]
+        return res
+
 
 
     def in_arr(self, n, arr):
         return arr[0] <= n <= arr[1]
 
-print Solution().findMinArrowShots([[10,16], [2,8], [1,6], [7,12]])
+print Solution().findMinArrowShots([[10,16], [2,8], [7,6], [7,12]])
 
