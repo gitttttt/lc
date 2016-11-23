@@ -1,2 +1,4 @@
-a = [[1,2], [3,4]]
-print sorted('123121')
+i1 = 0
+for i in 'abcz':
+    i1 += 1 << (ord(i) - ord('a'))
+print ord('a') - ord('b'), ord('a')
