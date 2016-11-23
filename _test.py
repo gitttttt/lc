@@ -8,5 +8,6 @@ def gen():
 
 a = gen()
 print a.next()
-print
+print()
+print type(gen)
 print a.next()
