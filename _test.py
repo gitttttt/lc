@@ -1,2 +1,5 @@
-print {1:2}.values()
+from collections import Counter
 
+a = Counter('abc')
+a['d']
+{}.setdefault()
