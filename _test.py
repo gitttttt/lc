@@ -1,5 +1,4 @@
-from collections import Counter
-
-a = Counter('abc')
-a['d']
-{}.setdefault()
+a = [0]
+c = a[0]
+a[0]=2
+print c
