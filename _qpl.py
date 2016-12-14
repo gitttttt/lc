@@ -25,6 +25,7 @@ def qzh_i(list):
         res.append(tmp)
     return res
 
+
 # def qpl_i(list):
 #     res = [list]
 #     for i in range(len(list)):
