@@ -26,4 +26,4 @@ class Solution(object):
             res.append(str(s) + '->' + str(tmp))
         return res
 
-print Solution().summaryRanges([1,2])
+print Solution().summaryRanges([1, 2])
